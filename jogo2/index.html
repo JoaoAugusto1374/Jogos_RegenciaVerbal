@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semântica Verbal - O Desafio Final</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container-jogo">
+    <canvas id="efeitoConfete"></canvas>
+    <canvas id="efeitoErro"></canvas>
+    <h1 id="tituloJogo">Semântica Verbal</h1>
+    <h2 id="subtituloJogo">Escolha um modo de desafio verbal:</h2>
+
+    <!-- Menu Inwcial -->
+    <div class="secao ativa" id="menuPrincipal">
+      <div class="menu">
+        <button onclick="iniciarModo('faseMultiplaEscolha', 'Múltipla Escolha')">📘 Múltipla Escolha</button>
+        <button onclick="iniciarModo('faseDigitacao', 'Digite o Verbo')">⌨️ Digite o Verbo</button>
+        <button onclick="iniciarModo('faseForca', 'Jogo da Forca')">🪢 Jogo da Forca</button>
+        <button onclick="iniciarModo('faseAssociacao', 'Modo 4x4')">⏳ Modo 4x4</button>
+      </div>
+    </div>
+
+    <!-- Fase 1: Multipla Escolha -->
+    <div class="secao" id="faseMultiplaEscolha">
+      <p>O herói Elan ______ o dragão há 10 anos.</p>
+      <div class="opcoes" id="opcoesMultiplaEscolha">
+        <button onclick="verificarRespostaMultipla(0)">a) derrotava <div class="explicacao" id="explicacao-0"></div></button>
+        <button onclick="verificarRespostaMultipla(1)">b) derrotou <div class="explicacao" id="explicacao-1"></div></button>
+        <button onclick="verificarRespostaMultipla(2)">c) derrotaria <div class="explicacao" id="explicacao-2"></div></button>
+        <button onclick="verificarRespostaMultipla(3)">d) derrota <div class="explicacao" id="explicacao-3"></div></button>
+      </div>
+      <div class="mensagem" id="feedbackMultiplaEscolha"></div>
+      <div class="aposResposta" id="aposMultipla" style="display: none;"></div>
+      <button class="botao-voltar" onclick="voltarMenu('faseMultiplaEscolha')">🔙 Voltar ao Menu</button>
+    </div>
+
+    <!-- Fase 2: Digitação -->
+    <div class="secao" id="faseDigitacao">
+      <p>Digite o verbo correto para completar:<br><strong>Se os guardiões não ______ o ritual, o céu cairá.</strong></p>
+      <p><em>Dica: verbo "realizar" no pretérito imperfeito do subjuntivo (3ª pessoa do plural).</em></p>
+      <input type="text" id="respostaDigitada" placeholder="Digite aqui...">
+      <button class="botao-enviar" onclick="verificarRespostaDigitada()">Enviar</button>
+      <div class="mensagem" id="feedbackDigitacao"></div>
+      <button class="botao-voltar" onclick="voltarMenu('faseDigitacao')">🔙 Voltar ao Menu</button>
+    </div>
+
+    <!-- Fase 3: Jogo da Foca -->
+    <div class="secao" id="faseForca">
+      <p><strong>Descubra o verbo conjugado:</strong></p>
+      <canvas id="desenharPartedaForca" width="200" height="250"></canvas>
+      <p id="palavraForca">_ _ _ _ _ _ _ _ _ _ _ _ _</p>
+      <p>Letras usadas: <span id="letrasUsadas">-</span></p>
+      <p>Tentativas restantes: <span id="tentativasRestantes">6</span></p>
+      <input type="text" id="entradaLetra" maxlength="1" placeholder="Digite uma letra..." />
+      <button onclick="adivinharLetra()">Tentar</button>
+      <div class="mensagem" id="feedbackForca"></div>
+      <button class="botao-voltar" onclick="voltarMenu('faseForca')">🔙 Voltar ao Menu</button>
+    </div>
+
+    <!-- Fase 4: Modo 4x4 -->
+    <div class="secao" id="faseAssociacao">
+      <p><strong>Ligue os verbos às frases corretas com concordância verbal.</strong></p>
+      <div class="grade-associacao" id="gradeAssociacao"></div>
+      <div class="mensagem" id="feedbackAssociacao"></div>
+      <button class="botao-voltar" onclick="voltarMenu('faseAssociacao')">🔙 Voltar ao Menu</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

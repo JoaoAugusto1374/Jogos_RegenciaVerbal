@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdfdfd url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+
+.container-jogo {
+  background-color: #fffef5;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #4a4a4a;
+  text-shadow: 1px 1px #e0e0e0;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+
+.secao {
+  display: none;
+}
+
+
+.secao.ativa {
+  display: block;
+}
+
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+
+.menu button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu button:hover {
+  transform: scale(1.05);
+  background: #f0f0f0;
+}
+
+
+.opcoes button, 
+.botao-proximo, 
+.botao-voltar { 
+  margin: 0.75rem 0;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: 2px solid #bbb;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 80%;
+  max-width: 300px;
+}
+
+.opcoes button:hover,
+.botao-proximo:hover,
+.botao-voltar:hover {
+  background-color: #f9f9f9;
+}
+
+input[type="text"] {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+
+.mensagem { 
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+
+#efeitoConfete, 
+#efeitoErro { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+
+.grade-associacao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+
+.caixa-associacao { 
+  padding: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.caixa-associacao.selecionada { 
+  background-color: #d0ebff;
+}
+
+.caixa-associacao.correta {
+  background-color: #d4edda;
+  cursor: default;
+}
+
+.caixa-associacao.errada {
+    background-color: #d4edda;
+    border: 0.5px solid red;
+}
+
+
+
+
+
+
+
+
