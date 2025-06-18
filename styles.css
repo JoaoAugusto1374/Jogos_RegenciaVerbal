@@ -15,7 +15,6 @@ body {
   color: #333;
 }
 
-
 .container-jogo {
   background-color: #fffef5;
   padding: 2rem;
@@ -41,16 +40,13 @@ h2 {
   color: #666;
 }
 
-
 .secao {
   display: none;
 }
 
-
 .secao.ativa {
   display: block;
 }
-
 
 .menu {
   display: grid;
@@ -60,7 +56,6 @@ h2 {
   align-items: center;
   margin-top: 2rem;
 }
-
 
 .menu button {
   padding: 1rem;
@@ -79,10 +74,9 @@ h2 {
   background: #f0f0f0;
 }
 
-
-.opcoes button, 
-.botao-proximo, 
-.botao-voltar { 
+.opcoes button,
+.botao-enviar,
+.botao-voltar {
   margin: 0.75rem 0;
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
@@ -97,7 +91,7 @@ h2 {
 }
 
 .opcoes button:hover,
-.botao-proximo:hover,
+.botao-enviar:hover,
 .botao-voltar:hover {
   background-color: #f9f9f9;
 }
@@ -111,15 +105,20 @@ input[type="text"] {
   margin-bottom: 1rem;
 }
 
-
-.mensagem { 
+.mensagem {
   font-weight: bold;
   margin-top: 1rem;
 }
 
+.explicacao-regencia {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+}
 
-#efeitoConfete, 
-#efeitoErro { 
+#efeitoConfete,
+#efeitoErro,
+#efeitoForca {
   position: absolute;
   top: 0;
   left: 0;
@@ -129,7 +128,6 @@ input[type="text"] {
   z-index: 100;
 }
 
-
 .grade-associacao {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -137,8 +135,7 @@ input[type="text"] {
   margin-top: 1.5rem;
 }
 
-
-.caixa-associacao { 
+.caixa-associacao {
   padding: 1rem;
   border: 2px solid #ccc;
   border-radius: 8px;
@@ -147,7 +144,7 @@ input[type="text"] {
   transition: background 0.3s;
 }
 
-.caixa-associacao.selecionada { 
+.caixa-associacao.selecionada {
   background-color: #d0ebff;
 }
 
@@ -157,14 +154,7 @@ input[type="text"] {
 }
 
 .caixa-associacao.errada {
-    background-color: #d4edda;
-    border: 0.5px solid red;
+  background-color: #f8d7da;
+  border-color: red;
 }
-
-
-
-
-
-
-
 

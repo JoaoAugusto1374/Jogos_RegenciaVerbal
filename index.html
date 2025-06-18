@@ -13,7 +13,7 @@
     <h1 id="tituloJogo">Semântica Verbal</h1>
     <h2 id="subtituloJogo">Escolha um modo de desafio verbal:</h2>
 
-    <!-- Menu Inwcial -->
+    <!-- Menu Inicial -->
     <div class="secao ativa" id="menuPrincipal">
       <div class="menu">
         <button onclick="iniciarModo('faseMultiplaEscolha', 'Múltipla Escolha')">📘 Múltipla Escolha</button>
@@ -23,34 +23,35 @@
       </div>
     </div>
 
-    <!-- Fase 1: Multipla Escolha -->
+    <!-- Fase 1: Múltipla Escolha -->
     <div class="secao" id="faseMultiplaEscolha">
-      <p>O herói Elan ______ o dragão há 10 anos.</p>
+      <p id="perguntaMultipla"></p>
       <div class="opcoes" id="opcoesMultiplaEscolha">
-        <button onclick="verificarRespostaMultipla(0)">a) derrotava <div class="explicacao" id="explicacao-0"></div></button>
-        <button onclick="verificarRespostaMultipla(1)">b) derrotou <div class="explicacao" id="explicacao-1"></div></button>
-        <button onclick="verificarRespostaMultipla(2)">c) derrotaria <div class="explicacao" id="explicacao-2"></div></button>
-        <button onclick="verificarRespostaMultipla(3)">d) derrota <div class="explicacao" id="explicacao-3"></div></button>
+        <button onclick="verificarRespostaMultipla(0)"></button>
+        <button onclick="verificarRespostaMultipla(1)"></button>
+        <button onclick="verificarRespostaMultipla(2)"></button>
+        <button onclick="verificarRespostaMultipla(3)"></button>
       </div>
       <div class="mensagem" id="feedbackMultiplaEscolha"></div>
-      <div class="aposResposta" id="aposMultipla" style="display: none;"></div>
+      <div class="explicacao-regencia" id="explicacaoMultipla"></div>
       <button class="botao-voltar" onclick="voltarMenu('faseMultiplaEscolha')">🔙 Voltar ao Menu</button>
     </div>
 
     <!-- Fase 2: Digitação -->
     <div class="secao" id="faseDigitacao">
-      <p>Digite o verbo correto para completar:<br><strong>Se os guardiões não ______ o ritual, o céu cairá.</strong></p>
-      <p><em>Dica: verbo "realizar" no pretérito imperfeito do subjuntivo (3ª pessoa do plural).</em></p>
+      <p id="perguntaDigitacao"></p>
+      <p id="dicaDigitacao"></p>
       <input type="text" id="respostaDigitada" placeholder="Digite aqui...">
       <button class="botao-enviar" onclick="verificarRespostaDigitada()">Enviar</button>
       <div class="mensagem" id="feedbackDigitacao"></div>
+      <div class="explicacao-regencia" id="explicacaoDigitacao"></div>
       <button class="botao-voltar" onclick="voltarMenu('faseDigitacao')">🔙 Voltar ao Menu</button>
     </div>
 
-    <!-- Fase 3: Jogo da Foca -->
+    <!-- Fase 3: Jogo da Forca -->
     <div class="secao" id="faseForca">
       <p><strong>Descubra o verbo conjugado:</strong></p>
-      <canvas id="desenharPartedaForca" width="200" height="250"></canvas>
+      <canvas id="efeitoForca" width="200" height="250"></canvas>
       <p id="palavraForca">_ _ _ _ _ _ _ _ _ _ _ _ _</p>
       <p>Letras usadas: <span id="letrasUsadas">-</span></p>
       <p>Tentativas restantes: <span id="tentativasRestantes">6</span></p>
